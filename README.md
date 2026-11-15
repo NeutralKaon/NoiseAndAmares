@@ -4,6 +4,8 @@ This repo provides (I hope!) code and data for:
 
 > C. Laustsen and J. J. Miller, *Non-Gaussian distributed AMARES quantified amplitudes of spectral noise may bias kinetic estimations in X-nuclear MRS.* Magnetic Resonance in Medicine (2026, in review). DOI: *pending*
 
+A preprint of this paper is available (hopefully without biasing the publication process) here: 
+
 ## The point
 
 Kinetic models in hyperpolarized 13C MRS and 2H deuterium metabolic imaging (DMI) are usually fitted by least squares to metabolite amplitudes from a spectral quantification algorithm such as AMARES. Least squares assumes the errors on those amplitudes are Gaussian and zero-mean. Because amplitudes fitted by AMARES are positive semidefinite, this assumption is violated. We have explored (in detail) the distribution of experimental noise-only spectra found by both jMRUI and OXSA and it does not appear to be consistent with any particular distribution, but rather a distribution of distributions (!) when selected for by AIC. 
@@ -67,15 +69,15 @@ Several figures were assembled by hand from the component plots provided by thes
 | 4 | `StatisticalAnalysis/DistributionFitting.R` |
 | 5 | `end_to_end_kinetic_simulation/noise_added_to_metabolite_amplitudes_carbon.m` |
 | 6 | `end_to_end_kinetic_simulation/noise_added_to_metabolite_amplitudes_deuterium.m` |
-| 7 | both of the above (¹³C and ²H panels) |
+| 7 | both of the above (13C and 2H panels) |
 | 8 | `StatisticalAnalysis/noise_statistics_analysis.R` |
 | 9 | `figures/simulate_noise_sweep.m` (slow), then `figures/figure_end_to_end_variation.m` |
 | 10 | `figures/simulate_parameter_sweep.m` (very slow), then `figures/figure_ratio_correlation.m` |
 
 
-The summarised Monte Carlo results for Figs 9 and 10 (`figures/noise_sweep_30x50.mat`, `figures/parameter_sweep_8x5x15.mat`) are included, so the plotting scripts run straight away -- they take a few hours otherwise. To regenerate them from scratch, delete them and re-run the `simulate_*` scripts. 
+The summarised Monte Carlo results for Figs 9 and 10 (`figures/noise_sweep_30x50.mat`, `figures/parameter_sweep_8x5x15.mat`) are included, so the plotting scripts run immediately -- they take a few hours otherwise. To regenerate them from scratch, delete them and re-run the `simulate_*` scripts. 
 
-`figure_ratio_correlation.m` regenerates the example ¹³C and ²H spectra in the first two columns of Fig. 10 with a fixed random seed.
+`figure_ratio_correlation.m` regenerates the example 13C and 2H spectra in the first two columns of Fig. 10 with a fixed random seed.
 
 ## Licence and third-party code
 
