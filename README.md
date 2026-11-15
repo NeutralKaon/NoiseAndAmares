@@ -41,27 +41,14 @@ end_to_end_kinetic_simulation/       MATLAB: synthetic FIDs -> quantification ->
   figures/                           noise / parameter sweeps and the plotting scripts for Figs 9-10
   hyperpolarized-mri-toolbox/        UCSF Hyperpolarized MRI Toolbox v1.7 (kinetic fitting; own LICENSE)
 
-OXSA/                                OXSA AMARES toolbox (Purvis et al. 2017) add-ons 
+OXSA/                                OXSA AMARES toolbox (Purvis et al. 2017) prior knowledge files 
 ```
 
-### AMARES prior knowledge
-
-- **End-to-end simulations (Figs 3, 9, 10):** `quantify_spectra_pipline.m` loads the 6-peak files
-  `OXSA/main/+AMARES/+priorKnowledge/PK_3T_1C_13C_6Peaks.m` and `PK_3T_2H_6Peaks.m`
-  (copies are in `end_to_end_kinetic_simulation/`). Every resonance is a Lorentzian singlet;
-  amplitude, chemical shift and linewidth are fitted within bounds; one zero-order phase is shared
-  by all peaks (the ²H lipid peak has its own); the begin time is fixed at 0. The values are listed
-  in the Methods of the paper.
-- **Noise-only simulations (Fig. 8):** `noise_statistics_test.m` uses the 5-peak files
-  `end_to_end_kinetic_simulation/PK_3T_1C_13C_5Peaks.m` and `PK_3T_2H_5Peaks.m`, and keeps
-  signed (unclipped) integrals.
-- **Experimental noise-only data (Figs 1, 2):** quantified in jMRUI/OXSA with the prior knowledge
-  described in the Methods of the paper.
 
 ## Requirements
 
-- OXSA: run `./get_oxsa.sh` once. It clones OXSA (Purvis et al. 2017) into `OXSA/`, alongside the two prior-knowledge files already there.
-- MATLAB (tested on R2022a) with the Optimization Toolbox and the Statistics and Machine Learning Toolbox. The scripts add OXSA and the UCSF toolbox to the path themselves.
+- OXSA: run `./get_oxsa.sh` to get it. 
+- MATLAB (tested on R2022a) with the Optimization Toolbox and the Statistics and Machine Learning Toolbox. The scripts add OXSA and the UCSF toolbox.
 - R with:
 
   ```r
